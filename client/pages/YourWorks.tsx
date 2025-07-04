@@ -165,27 +165,6 @@ export default function YourWorks() {
             </div>
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-6 px-3">
-            <FilterDropdown label="All" />
-            <FilterDropdown label="Draft" />
-            <FilterDropdown label="Active" />
-            <FilterDropdown label="Voting" />
-            <FilterDropdown label="Completed" />
-            <FilterDropdown label="Rejected" />
-          </div>
-
-          {/* Sort By Section */}
-          <div className="mb-6">
-            <h2 className="text-lg font-bold text-gray-900 mb-4 px-4">
-              Sort by
-            </h2>
-            <div className="flex gap-3 px-4">
-              <SortButton label="Date" />
-              <SortButton label="Status" />
-            </div>
-          </div>
-
           {/* Projects Grid */}
           <div className="space-y-4 px-4">
             {projectsData.map((project) => (
