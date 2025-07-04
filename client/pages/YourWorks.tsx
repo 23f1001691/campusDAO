@@ -37,29 +37,49 @@ const SortButton = ({ label }: { label: string }) => (
   </div>
 );
 
-const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => (
-  <div className="flex justify-between items-start rounded-xl overflow-hidden">
-    <div className="flex-1 space-y-4 pr-4">
-      <div className="space-y-1">
-        <div className="text-sm text-campus-text">Project Title</div>
-        <h3 className="text-base font-bold text-gray-900 leading-5">
-          {project.title}
-        </h3>
-        <div className="text-sm text-campus-text">Tags: {project.tags}</div>
+const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => {
+  const handleProjectClick = () => {
+    // Navigate to project detail page or handle project click
+    console.log(`Navigating to project: ${project.title}`);
+    // You can add navigation logic here, for example:
+    // navigate(`/project/${project.id}`);
+  };
+
+  const handleViewDetails = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering the parent click
+    handleProjectClick();
+  };
+
+  return (
+    <div
+      className="flex justify-between items-start rounded-xl overflow-hidden cursor-pointer hover:bg-gray-50 transition-all duration-200 p-2 -m-2"
+      onClick={handleProjectClick}
+    >
+      <div className="flex-1 space-y-4 pr-4">
+        <div className="space-y-1">
+          <div className="text-sm text-campus-text">Project Title</div>
+          <h3 className="text-base font-bold text-gray-900 leading-5 hover:text-campus-blue transition-colors">
+            {project.title}
+          </h3>
+          <div className="text-sm text-campus-text">Tags: {project.tags}</div>
+        </div>
+        <button
+          onClick={handleViewDetails}
+          className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-medium rounded-2xl hover:bg-gray-200 transition-colors"
+        >
+          View Details
+        </button>
       </div>
-      <button className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-medium rounded-2xl hover:bg-gray-200 transition-colors">
-        View Details
-      </button>
+      <div className="flex-shrink-0">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-80 h-44 object-cover rounded-xl transition-transform duration-200 hover:scale-105"
+        />
+      </div>
     </div>
-    <div className="flex-shrink-0">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-80 h-44 object-cover rounded-xl"
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 export default function YourWorks() {
   return (
