@@ -54,6 +54,11 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* CampusDAO Brand Colors */
+    --campus-blue: 230 71% 68%;
+    --campus-text: 230 46% 45%;
+    --campus-bg: 210 40% 98%;
   }
 
   .dark {
