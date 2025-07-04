@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Index() {
+  const navigate = useNavigate();
+
   const handleConnectWallet = () => {
-    // Placeholder for wallet connection logic
-    console.log("Connect wallet clicked");
+    navigate("/projectexplorer");
   };
 
   return (
