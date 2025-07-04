@@ -1,6 +1,7 @@
 import { ChevronDown, Bell } from "lucide-react";
+import { useState } from "react";
 
-const projectsData = [
+const createdProjectsData = [
   {
     id: 1,
     title: "Campus Sustainability Initiative",
@@ -24,6 +25,30 @@ const projectsData = [
   },
 ];
 
+const participatedProjectsData = [
+  {
+    id: 4,
+    title: "AI-Powered Study Assistant",
+    tags: "AI, Machine Learning, Education",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/6fd928d0205e25058a351eaebdd21128a86ef89f?width=618",
+  },
+  {
+    id: 5,
+    title: "Decentralized Event Management System",
+    tags: "Blockchain, Events, Management",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/cbeb5bd2d470f3efb0a6a98f621aa60f1ec3b0d2?width=618",
+  },
+  {
+    id: 6,
+    title: "Community Forum for Developers",
+    tags: "Community, Development, Collaboration",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/719c9c5492aede1f65e465003e55181d0ba1362b?width=618",
+  },
+];
+
 const FilterDropdown = ({ label }: { label: string }) => (
   <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-2xl cursor-pointer hover:bg-gray-200 transition-colors">
     <span className="text-sm font-medium text-gray-900">{label}</span>
@@ -37,7 +62,11 @@ const SortButton = ({ label }: { label: string }) => (
   </div>
 );
 
-const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => {
+const ProjectCard = ({
+  project,
+}: {
+  project: (typeof createdProjectsData)[0];
+}) => {
   const handleProjectClick = () => {
     // Navigate to project detail page or handle project click
     console.log(`Navigating to project: ${project.title}`);
@@ -82,6 +111,13 @@ const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => {
 };
 
 export default function YourWorks() {
+  const [activeTab, setActiveTab] = useState<"created" | "participated">(
+    "created",
+  );
+
+  const currentProjects =
+    activeTab === "created" ? createdProjectsData : participatedProjectsData;
+
   return (
     <div className="min-h-screen bg-campus-bg font-public-sans">
       {/* Header */}
@@ -152,13 +188,23 @@ export default function YourWorks() {
           {/* Tabs */}
           <div className="mb-6">
             <div className="flex items-start gap-8 px-4 border-b border-gray-300">
-              <div className="flex flex-col items-center py-4 border-b-3 border-gray-200">
-                <span className="text-sm font-bold text-gray-900">
+              <div
+                className="flex flex-col items-center py-4 border-b-3 border-gray-200 cursor-pointer"
+                onClick={() => setActiveTab("created")}
+              >
+                <span
+                  className={`text-sm font-bold ${activeTab === "created" ? "text-gray-900" : "text-campus-text"}`}
+                >
                   My Created Projects
                 </span>
               </div>
-              <div className="flex flex-col items-center py-4 border-b-3 border-gray-200">
-                <span className="text-sm font-bold text-campus-text">
+              <div
+                className="flex flex-col items-center py-4 border-b-3 border-gray-200 cursor-pointer"
+                onClick={() => setActiveTab("participated")}
+              >
+                <span
+                  className={`text-sm font-bold ${activeTab === "participated" ? "text-gray-900" : "text-campus-text"}`}
+                >
                   Participated Projects
                 </span>
               </div>
@@ -167,7 +213,7 @@ export default function YourWorks() {
 
           {/* Projects Grid */}
           <div className="space-y-4 px-4">
-            {projectsData.map((project) => (
+            {currentProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
