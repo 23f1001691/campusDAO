@@ -106,15 +106,15 @@ export default function DAOManagement() {
     <div className="min-h-screen bg-campus-bg font-public-sans">
       {/* Header */}
       <header className="bg-campus-bg border-b border-gray-200">
-        <div className="px-10 py-3">
+        <div className="px-10 py-3 flex flex-col">
           <div className="flex items-center justify-between">
-            {/* Left side - Logo and Navigation */}
+            {/* Left side - Logo */}
             <div className="flex items-center gap-4">
               <h1 className="text-lg font-bold text-gray-900">CampusDAO</h1>
             </div>
 
-            {/* Right side - Navigation and Profile */}
-            <div className="flex items-center gap-9">
+            {/* Center - Navigation */}
+            <div className="flex items-center gap-9 mx-auto">
               <nav className="flex items-center gap-9">
                 <a
                   href="#"
@@ -140,20 +140,7 @@ export default function DAOManagement() {
                 >
                   DAO
                 </a>
-                <a
-                  href="#"
-                  className="text-sm text-gray-900 hover:text-campus-blue transition-colors"
-                >
-                  Profile
-                </a>
               </nav>
-
-              {/* Profile Image */}
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/224ae32d1a0fc745d65a6738ec6cd7d6eb770ed5?width=80"
-                alt="Profile"
-                className="w-10 h-10 rounded-full"
-              />
             </div>
           </div>
         </div>
