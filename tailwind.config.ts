@@ -13,7 +13,15 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        "public-sans": ["Public Sans", "system-ui", "sans-serif"],
+      },
       colors: {
+        campus: {
+          blue: "hsl(var(--campus-blue))",
+          text: "hsl(var(--campus-text))",
+          bg: "hsl(var(--campus-bg))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
