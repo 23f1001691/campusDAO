@@ -97,7 +97,7 @@ export default function ProjectExplorer() {
         <div className="px-10 py-3">
           <div className="flex items-center justify-between">
             {/* Left side - Logo and Navigation */}
-            <div className="flex items-center" style={{ gap: "210px" }}>
+            <div className="flex items-center" style={{ gap: "318px" }}>
               <div className="flex items-center gap-4">
                 <h1 className="text-lg font-bold text-gray-900">CampusDAO</h1>
               </div>
@@ -133,20 +133,8 @@ export default function ProjectExplorer() {
               </nav>
             </div>
 
-            {/* Right side - Search, Notifications, Profile */}
+            {/* Right side - Notifications, Profile */}
             <div className="flex items-center gap-8">
-              {/* Search */}
-              <div className="hidden md:flex items-center bg-gray-100 rounded-xl overflow-hidden min-w-40 max-w-64">
-                <div className="px-4 py-2">
-                  <Search className="w-6 h-6 text-campus-text" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="bg-gray-100 px-2 py-2 text-sm text-campus-text placeholder-campus-text border-none outline-none flex-1"
-                />
-              </div>
-
               {/* Notifications */}
               <div className="p-2 bg-gray-100 rounded-full">
                 <Bell className="w-5 h-5 text-gray-900" />
