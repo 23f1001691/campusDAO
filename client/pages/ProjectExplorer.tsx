@@ -1,4 +1,5 @@
 import { ChevronDown, Search, Bell } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const projectsData = [
   {
@@ -83,6 +84,12 @@ const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => (
 );
 
 export default function ProjectExplorer() {
+  const navigate = useNavigate();
+
+  const handleDAOClick = () => {
+    navigate("/dao");
+  };
+
   return (
     <div className="min-h-screen bg-campus-bg font-public-sans">
       {/* Header */}
@@ -109,7 +116,11 @@ export default function ProjectExplorer() {
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-gray-900 hover:text-campus-blue transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDAOClick();
+                  }}
+                  className="text-sm text-gray-900 hover:text-campus-blue transition-colors cursor-pointer"
                 >
                   DAO
                 </a>
