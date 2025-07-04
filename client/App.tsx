@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ProjectExplorer from "./pages/ProjectExplorer";
 import DAOManagement from "./pages/DAOManagement";
+import YourWorks from "./pages/YourWorks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/projectexplorer" element={<ProjectExplorer />} />
           <Route path="/dao" element={<DAOManagement />} />
+          <Route path="/yourworks" element={<YourWorks />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

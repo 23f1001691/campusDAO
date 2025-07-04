@@ -90,6 +90,10 @@ export default function ProjectExplorer() {
     navigate("/dao");
   };
 
+  const handleYourWorksClick = () => {
+    navigate("/yourworks");
+  };
+
   return (
     <div className="min-h-screen bg-campus-bg font-public-sans">
       {/* Header */}
@@ -113,6 +117,16 @@ export default function ProjectExplorer() {
                   className="text-sm text-gray-900 hover:text-campus-blue transition-colors"
                 >
                   Projects
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleYourWorksClick();
+                  }}
+                  className="text-sm text-gray-900 hover:text-campus-blue transition-colors cursor-pointer"
+                >
+                  Your Works
                 </a>
                 <a
                   href="#"
