@@ -56,7 +56,10 @@ const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => (
       <div className="flex gap-4">
         <div className="flex-1 space-y-4">
           <div className="space-y-1">
-            <h3 className="text-base font-bold text-gray-900 leading-5">
+            <h3
+              className="text-base font-bold text-gray-900 leading-5"
+              style={{ marginTop: "10px" }}
+            >
               {project.title}
             </h3>
             <p className="text-sm text-campus-text leading-relaxed">
@@ -64,7 +67,7 @@ const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => (
             </p>
           </div>
           <button className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-medium rounded-2xl hover:bg-gray-200 transition-colors">
-            Join Project
+            View Project
           </button>
         </div>
         <div className="flex-shrink-0">
@@ -87,7 +90,7 @@ export default function ProjectExplorer() {
         <div className="px-10 py-3">
           <div className="flex items-center justify-between">
             {/* Left side - Logo and Navigation */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center" style={{ gap: "210px" }}>
               <div className="flex items-center gap-4">
                 <h1 className="text-lg font-bold text-gray-900">CampusDAO</h1>
               </div>
@@ -108,13 +111,13 @@ export default function ProjectExplorer() {
                   href="#"
                   className="text-sm text-gray-900 hover:text-campus-blue transition-colors"
                 >
-                  Members
+                  DAO
                 </a>
                 <a
                   href="#"
                   className="text-sm text-gray-900 hover:text-campus-blue transition-colors"
                 >
-                  Learn
+                  Members
                 </a>
               </nav>
             </div>
